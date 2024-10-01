@@ -21,9 +21,9 @@ public class Activity_LabanonNable {
         
         Scanner sc = new Scanner(System.in);
         
-        boolean loop = true;
+        int Loop = 1;
         
-        while (true){
+        while (Loop==1){
         
         int operation;
         System.out.print("Enter number 1: ");
@@ -55,13 +55,12 @@ public class Activity_LabanonNable {
             System.out.println("Do you want to calculate another numbers?");
             sc.nextLine();
             System.out.println("Type: y/n ");
-            String calculate = sc. nextLine();
+            String calculate = sc.nextLine();
             
-            if (calculate == "n"){
-                loop=false;
+            if (calculate.equals("n")){
+                Loop = 1+1;
             }
             else{
-                loop = true;
             }
         }
     }
