@@ -4,6 +4,7 @@
  */
 package activity_labanonnable;
 
+
 /**
  *
  * @author Lenovo
@@ -14,7 +15,7 @@ public class Activity_LabanonNable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("HelloWorld");
     }
     
 }
