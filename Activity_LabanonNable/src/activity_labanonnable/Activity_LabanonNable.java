@@ -13,54 +13,82 @@ import java.util.Scanner;
  */
 public class Activity_LabanonNable {
 
-    static double total, difference, quotient, product;
-    static double num1, num2, num3;
-    
-    public static void main(String[] args) {
-        System.out.println("HelloWorld");
-        
+    static double result;
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("================================================================================HelloWorld================================================================================");
         Scanner sc = new Scanner(System.in);
         
-        int Loop = 1;
-        
-        while (Loop==1){
-        
-        int operation;
-        System.out.print("Enter number 1: ");
-        num1 = sc.nextDouble();
-        System.out.print("Enter number 2: ");
-        num2 = sc.nextDouble();
-        System.out.print("Enter number 3: ");
-        num3 = sc.nextDouble();
-        System.out.println("Choose an operation: 1. addition 2.subtraction 3.division 4.multiplication");
-        operation = sc.nextInt();
-        switch (operation){
-            case 1:
-                total = num1 + num2 + num3;
-                System.out.println("Total: " + total);
-                break;        
-            case 2:
-                difference = num1 - num2 - num3;
-                System.out.println("Difference: " + difference);
-                break;
-            case 3:
-                quotient = num1 / num2 / num3;
-                System.out.println("Quotient: " + quotient);
-                break;
-            case 4:
-                product = num1 * num2 * num3;
-                System.out.println("{Product: " + product);
-                break;
+        boolean Loop = true;
+        while (Loop==true){
+            System.out.print("How many Numbers do you want to input? ");
+            int nums = sc.nextInt();
+            double numbers[]=new double [nums];
+            for(int i=0;i<numbers.length;i++){
+                System.out.println("Enter the number ");
+                double numInputs=sc.nextDouble();
+                numbers[i]=numInputs;
             }
-            System.out.println("Do you want to calculate another numbers?");
+            System.out.print("Choose an operation:\n[1] Addition\n[2] Subtraction\n[3] Division\n[4] Multiplication\nEnter:");
+            int operation = sc.nextInt();
+            switch (operation){
+                case 1:
+                    result = numbers[0];
+                    for(int j=1;j<numbers.length;j++){
+                        result += numbers[j];
+                    }
+                    System.out.println("Total: "+result);
+                    break;        
+                case 2:
+                    result = numbers[0];
+                    for(int j=1;j<numbers.length;j++){
+                        result -= numbers[j];
+                    }
+                    System.out.println("Total: "+result);
+                    break;
+                case 3:
+                    result = numbers[0];
+                    for(int j=1;j<numbers.length;j++){
+                        result /= numbers[j];
+                    }
+                    System.out.println("Total: "+result);
+                    break;
+                case 4:
+                    result = numbers[0];
+                    for(int j=1;j<numbers.length;j++){
+                        result *= numbers[j];
+                    }
+                    System.out.println("Total: "+result);
+                    break;
+            }
+            System.out.println("\nDo you want to calculate another numbers?");
             sc.nextLine();
-            System.out.println("Type: y/n ");
+            System.out.println("Choose:\n[Y] Yes\n[N] no");
             String calculate = sc.nextLine();
             
-            if (calculate.equals("n")){
-                Loop = 1+1;
+            if (calculate.equalsIgnoreCase("n")){
+                System.out.print("Closing Program");
+                Thread.sleep(500);
+                System.out.print(".");
+                Thread.sleep(700);
+                System.out.print(".");
+                Thread.sleep(700);
+                System.out.print(".\n");
+                System.out.println("Have a nice day");
+                Loop = false;
             }
-            else{
+            else if(calculate.equalsIgnoreCase("y")){
+                System.out.print("\n");
+            }else{
+                System.out.print("INVALID OUTPUT\nClosing Program");
+                Thread.sleep(500);
+                System.out.print(".");
+                Thread.sleep(700);
+                System.out.print(".");
+                Thread.sleep(700);
+                System.out.print(".\n");
+                System.out.println("Have a nice day");
+                Loop = false;
+                Loop = false;
             }
         }
     }
