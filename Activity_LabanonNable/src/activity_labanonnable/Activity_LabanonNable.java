@@ -14,10 +14,10 @@ public class Activity_LabanonNable {
         Scanner sc=new Scanner(System.in);
         boolean Loop=true;
         while (Loop==true){
-            System.out.print("How many numbers do you want to input? ");
+            System.out.print("INPUT AT LEAST 2 NUMBERS\nHow many numbers do you want to input? ");
             nums = sc.nextInt();
             
-            if(nums<=0){
+            if(nums<=1){
                 System.out.print("INVALID OUTPUT\nClosing Program");
                 Thread.sleep(500);
                 System.out.print(".");
