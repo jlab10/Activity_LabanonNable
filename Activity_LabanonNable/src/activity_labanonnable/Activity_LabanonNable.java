@@ -5,14 +5,29 @@ import java.util.Scanner;
 
 public class Activity_LabanonNable {
 
+    static String name;
     static double result;
-    static int nums;
+    static int nums, age, grade;
+
     
     public static void main(String[] args) throws InterruptedException {
         
         System.out.println("================================================================================ HelloWorld ================================================================================");
         Scanner sc=new Scanner(System.in);
         boolean Loop=true;
+        System.out.println("[1]Calculate Numbers\n[2]Add Student Information\nEnter: ");
+        int choose=sc.nextInt();
+        
+        if(choose==2){
+            StudentInformation information = new StudentInformation();
+            information.name(name);
+            information.age(age);
+            information.grade(grade);
+            System.out.println("[STUDENT INFORMATION ADDED]");
+            System.out.println("Name: "+name+"\nAge: "+age+"\nGrade Level: "+grade);            
+        }
+        else if(choose==1) {
+        
         while (Loop==true){
             System.out.print("INPUT AT LEAST 2 NUMBERS\nHow many numbers do you want to input? ");
             nums = sc.nextInt();
@@ -101,6 +116,17 @@ public class Activity_LabanonNable {
                     Loop=false;
                 }
             }         
+        }
+    }
+        else{
+            System.out.print("INVALID OUTPUT\nClosing Program");
+                    Thread.sleep(500);
+                    System.out.print(".");
+                    Thread.sleep(700);
+                    System.out.print(".");
+                    Thread.sleep(700);
+                    System.out.print(".\n");
+                    System.out.println("Have a nice day");
         }
     }
 }
